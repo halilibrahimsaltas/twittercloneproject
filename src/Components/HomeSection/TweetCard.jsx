@@ -1,34 +1,44 @@
-import { Repeat } from "@mui/icons-material";
+import { FavoriteBorderOutlined, Repeat } from "@mui/icons-material";
 import React from "react";
 import { Avatar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import RepeatIcon from '@mui/icons-material/Repeat';
+import RepeatIcon from "@mui/icons-material/Repeat";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Button from "@mui/material/Button";
-import { Menu, MenuItem } from '@mui/material';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FileUploadIcon from '@mui/icons-material/FileUpload';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-
+import { Menu, MenuItem } from "@mui/material";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FileUploadIcon from "@mui/icons-material/FileUpload";
+import BarChartIcon from "@mui/icons-material/BarChart";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const TweetCard = () => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
-    const handleDeleteTweet=()=>{
-        console.log('delete tweet')
-        handleClose();
-
-    }
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handleDeleteTweet = () => {
+    console.log("delete tweet");
+    handleClose();
+  };
   const navigate = useNavigate();
-  
+
+  const handleOpenReplyModel = () => {
+    console.log("open model");
+  };
+
+  const handleCreateRetweet = () => {
+    console.log("handle create retweet ");
+  };
+
+  const handleLikeTweet = () => {
+    console.log("handle like tweet");
+  };
+
   return (
     <div className="">
       {/*<div className='flex items-center font-semibold text-gray-700 py-2'>
@@ -77,22 +87,69 @@ const TweetCard = () => {
               </Menu>
             </div>
           </div>
-           <div className="mt-2">
-             <div className="cursor-pointer" >
-                <p>twitter clone - full stack project with spring bott and react</p>
-                <img  className="w-[28rem] h-[35rem] border border-gray-400 p-5 rounded-md  " src="https://photo-cdn2.icons8.com/uxXuJ8pCgdN0SS-ZuRkOg_b0RNKqqSC3Zhvy-6zOuzw/rs:fit:715:1072/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi83YWNjZGEwNmQ0/MTc0NzllODNiODY2/NDE1N2ZhYTgxMy5q/cGc.jpg" alt="" />
-
-             </div>
-             <div className="py-5 flex flex-wrap justify-between items-center">
-                <div className="space-x-3 flex items-center text-gray-600">
-                    
-
-                </div>
-
-
-
-             </div>
-           </div>
+          <div className="mt-2">
+            <div className="cursor-pointer">
+              <p>
+                twitter clone - full stack project with spring bott and react
+              </p>
+              <img
+                className="w-[28rem] h-[35rem] border border-gray-400 p-5 rounded-md  "
+                src="https://photo-cdn2.icons8.com/uxXuJ8pCgdN0SS-ZuRkOg_b0RNKqqSC3Zhvy-6zOuzw/rs:fit:715:1072/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi83YWNjZGEwNmQ0/MTc0NzllODNiODY2/NDE1N2ZhYTgxMy5q/cGc.jpg"
+                alt=""
+              />
+            </div>
+            <div className="py-5 flex flex-wrap justify-between items-center">
+              <div className="space-x-3 flex items-center text-gray-600">
+                <ChatBubbleOutlineIcon
+                  className="cursor-pointer"
+                  onClick={handleOpenReplyModel}
+                />
+                <p>43</p>
+              </div>
+              <div
+                className={`${
+                  true ? "text-pink-600" : "text-gray-600"
+                } space-x-3 flex items-center`}
+              >
+                <RepeatIcon
+                  onClick={handleCreateRetweet}
+                  className="cursor-pointer"
+                />
+                <p>54</p>
+              </div>
+              <div
+                className={`${
+                  true ? "text-pink-600" : "text-gray-600"
+                } space-x-3 flex items-center`}
+              >
+                {true ? (
+                  <FavoriteIcon
+                    onClick={handleLikeTweet}
+                    className="cursor-pointer"
+                  />
+                ) : (
+                  <FavoriteBorderOutlined
+                    onClick={handleLikeTweet}
+                    className="cursor-pointer"
+                  />
+                )}
+                <p>12</p>
+              </div>
+              <div className="space-x-3 flex items-center text-gray-600">
+                <BarChartIcon
+                  className="cursor-pointer"
+                  onClick={handleOpenReplyModel}
+                />
+                <p>564</p>
+              </div>
+              <div className="space-x-3 flex items-center text-gray-600">
+                <FileUploadIcon
+                  className="cursor-pointer"
+                  onClick={handleOpenReplyModel}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
