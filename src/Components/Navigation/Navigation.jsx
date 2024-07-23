@@ -16,6 +16,7 @@ const Navigation = () => {
     setAnchorEl(null);
   };
   const navigate = useNavigate();
+
   const handleLogout = () => {
     console.log("logout");
     handleClose();
@@ -36,7 +37,7 @@ const Navigation = () => {
         </div>
         <div className="space-y-6">
           {navigationMenu.map((item) => (
-            <div className="cursor-pointer flex space-x-3 items-center">
+            <div className="cursor-pointer flex space-x-3 items-center" onClick={()=>item.title=="Profile"?navigate('/profile/${5}'):navigate(item.path)}>
               {item.icon}
               <p className="text-x1">{item.title}</p>
             </div>
