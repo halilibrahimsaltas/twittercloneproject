@@ -88,7 +88,7 @@ const TweetCard = () => {
             </div>
           </div>
           <div className="mt-2">
-            <div className="cursor-pointer">
+            <div onClick={() => navigate(`/twit/${3}`)}className="cursor-pointer">
               <p>
                 twitter clone - full stack project with spring bott and react
               </p>
