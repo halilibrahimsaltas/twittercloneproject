@@ -25,8 +25,16 @@ const TwitDeteails = () => {
         <Divider sx={{margin:"2rem 0rem"}}/>
       </section>
 
+
       <section>
         {[1,1,1].map((item)=><TweetCard/>)}
+      </section>
+
+
+      <section>
+        
+
+        
       </section>
 
     </React.Fragment>
